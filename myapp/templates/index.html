@@ -21,22 +21,24 @@
         <div class="container">
             <div class="my-5">
                 <h2 class="text-center d-flex flex-row">
-                    Date <div class="bg-white shadow text-white" style="width: 50px; height: 50px;"></div>
-                    :<div class="bg-white shadow text-white" style="width: 50px; height: 50px;"></div>
-                    :<div class="bg-white shadow text-white" style="width: 50px; height: 50px;"></div>
-                </h2>
-                <h2 class="text-center d-flex flex-row">
-                    Time <div class=" bg-white shadow text-white" style="width: 50px; height: 50px;"></div>
-                    :<div class="bg-white shadow text-white" style="width: 50px; height: 50px;"></div>
-                    :<div class="bg-white shadow text-white" style="width: 50px; height: 50px;"></div>
+                    Datetime :
+                    <input type="datetime-local" id="currentDateTime">
+                    <script>
+                        const now = new Date();
+                        const myanmarOffset = 6.5 * 60; // Offset in minutes
+                        const myanmarTime = new Date(now.getTime() + (myanmarOffset - now.getTimezoneOffset()) * 30000);
+                        const formattedDateTime = myanmarTime.toISOString().slice(0, 16); // Format as YYYY-MM-DDTHH:mm
+                        document.getElementById('currentDateTime').value = formattedDateTime;
+                    </script>
                 </h2>
             </div>
         </div>
         <div class="container">
             <div class=" rounded-3" style="background-color: rgb(176, 183, 189);">
                 <div class="position-relative">
-                    <h2 class="p-3 text-dark">Daily Tasks</h2>
-                    <i class="p-3 position-absolute top-0 end-0"><i class="fa-solid fa-square-plus" style="font-size: 40px;"></i></i>
+                    <h2 class="p-3 text-dark ms-5">Daily Tasks</h2>
+                    <a href="{% url 'TodoCreate' %}" class="p-3 position-absolute top-0 end-0"><i class="fa-solid fa-square-plus" style="font-size: 40px;"></i></a>
+                    <a href="{% url 'ListDetails' %}" class="p-3 position-absolute top-0"><i class="fa-solid fa-list" style="font-size: 40px;"></i></a>
                 </div>
                 <ul class="list-group p-3">
                     {% for i in todo %}
@@ -50,6 +52,7 @@
         </div>
     </div>
 </section>
+
 
 
             

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<section>
+    <div class="container">
+        <h2 class="mb-5">Todo Detail</h2>
+        <a href="{% url 'ListDetails' %}" class="p-3 position-absolute top-0 end-0"><i class="fa-solid fa-right-from-bracket" style="font-size: 40px;"></i></a>
+
+        <p>Title: {{ todo.title }}</p>
+        <p>Description: {{ todo.description }}</p>
+        <p>Completed:</p>
+        <p>{% if todo.completed %}</p>
+        <span>YES</span>
+        {% else %}
+        <span>NO</span>
+        {% endif %}
+
+        <p>Created_at: {{ todo.created_at }}</p>
+        <p>Updated_at: {{ todo.updated_at }}</p>
+    </div>
+</section>
+
+{% endblock %}
