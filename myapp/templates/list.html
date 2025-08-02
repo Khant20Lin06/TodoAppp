@@ -12,7 +12,6 @@
         <div class="card-body">
             <table class="table table-bordered shadow my-5">
                 <tr>
-                    <th scope="col">ID</th>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
                     <th scope="col">Status</th>
@@ -22,8 +21,7 @@
                 </tr>
                 {% for i in todo %}
                 <tbody>
-                    <td scope="row">{{ i.id }}</td>
-                    <td>{{ i.title }}</td>
+                    <td scope="row">{{ i.title }}</td>
                     <td>{{ i.description }}</td>
                     <td><input type="checkbox" {% if i.completed %} checked {% endif %}><span>Completed</span></td>
                     <td>{{ i.created_at }}</td>
