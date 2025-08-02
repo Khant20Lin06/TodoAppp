@@ -6,10 +6,10 @@
         <div class="row">
             <div class="col-8 offset-2">
 
-                <div class="card mt-5" style="background-color: rgb(176, 183, 189);">
+                <div class="card mt-5 shadow" style="background-color: rgb(176, 183, 189);">
                     <div class="card-header">
                         <h1>Update Todo</h1>
-                        <a href="{% url 'ListDetails' %}" class="p-3 position-absolute top-0 end-0"><i class="fa-solid fa-right-from-bracket text-dark" style="font-size: 40px;"></i></a>
+                        <a href="{% url 'ListDetails' %}" class="p-3 position-absolute top-0 end-0"><i class="fa-solid fa-right-from-bracket text-dark shadow rounded" style="font-size: 40px;"></i></a>
                     </div>
                     <div class="card-body">
                         <form method="post">
@@ -17,21 +17,21 @@
 
                             <div class="form-group mb-4">
                                 <label for="title">Title</label>
-                                <input type="text" name="title" value="{% if todo %}{{ todo.title }}{% endif %}" required class="form-control">
+                                <input type="text" name="title" value="{% if todo %}{{ todo.title }}{% endif %}" required class="form-control shadow">
                             </div>
 
                             <div class="form-group mb-4">
                                 <label for="title">Description</label>
-                                <input type="text" name="description" value="{% if todo %}{{ todo.description }}{% endif %}" required class="form-control">
+                                <input type="text" name="description" value="{% if todo %}{{ todo.description }}{% endif %}" required class="form-control shadow">
                             </div>
 
                             <div class="form-group form-check">
-                                <input type="checkbox" name="completed" class="form-check-input" {% if todo and todo.completed %} checked {% endif %}>
+                                <input type="checkbox" name="completed" class="form-check-input shadow" {% if todo and todo.completed %} checked {% endif %}>
                                 <label for="completed">Completed</label>
                             </div>
                     </div>
                     <div class="card-footer text-body-secondary">
-                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="submit" class="btn btn-primary shadow">Update</button>
                         </form>
                     </div>
                 </div>

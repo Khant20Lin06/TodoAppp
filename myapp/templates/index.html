@@ -4,10 +4,9 @@
 
 
 <section id="home" style="background-color: rgb(62, 144, 216);">
-    <div class="container" >
-        <div class="">
-            <h1>Todo List</h1>
-            <div class="text-center my-5">
+    <div class="container" style="height: 500px;">
+        <div class="align-content-center h-100">
+            <div class="text-center mb-5">
                 <img src="" alt="" class="rounded-circle shadow object-fit-cover" width="250px" height="250px"  data-aos="fade-left" data-aos-duration="2000">
             </div>
             <h3 class="text-center mt-5">Good Afternoon</h3>
@@ -34,16 +33,16 @@
             </div>
         </div>
         <div class="container">
-            <div class=" rounded-3" style="background-color: rgb(176, 183, 189);">
+            <div class=" rounded-3 shadow" style="background-color: rgb(176, 183, 189);">
                 <div class="position-relative">
                     <h2 class="p-3 text-dark ms-5">Daily Tasks</h2>
-                    <a href="{% url 'TodoCreate' %}" class="p-3 position-absolute top-0 end-0"><i class="fa-solid fa-square-plus text-dark" style="font-size: 40px;"></i></a>
-                    <a href="{% url 'ListDetails' %}" class="p-3 position-absolute top-0"><i class="fa-solid fa-list text-dark" style="font-size: 40px;"></i></a>
+                    <a href="{% url 'TodoCreate' %}" class="p-3 position-absolute top-0 end-0"><i class="fa-solid fa-square-plus text-dark shadow rounded" style="font-size: 40px;"></i></a>
+                    <a href="{% url 'ListDetails' %}" class="p-3 position-absolute top-0"><i class="fa-solid fa-list text-dark shadow rounded" style="font-size: 40px;"></i></a>
                 </div>
                 <ul class="list-group p-3">
                     {% for i in todo %}
                     <li class="list-group-item" style="background-color: rgb(176, 183, 189);border: rgb(176, 183, 189);">
-                        <input class="form-check-input me-1 mt-2" type="checkbox" value="" id="firstCheckbox" {% if i.completed %} checked {% endif %}>
+                        <input class="form-check-input me-1 mt-2 shadow" type="checkbox" value="" id="firstCheckbox" {% if i.completed %} checked {% endif %}>
                         <label class="form-check-label" for="firstCheckbox"><h4><a href="" class="text-dark" style="text-decoration:none;">{{ i.title }}</a></h4></label>
                     {% endfor %}
                     </li>
